@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "579125528569",
+    "firebase_url": "https://shop-cf892.firebaseio.com",
+    "project_id": "shop-cf892",
+    "storage_bucket": "shop-cf892.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579125528569:android:6d93cf102c7d59ed005f28",
+        "android_client_info": {
+          "package_name": "pontinisyststems.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579125528569-eutadh3tereccch48an4nu4d9d4auupa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv3z6NvUV0MMFeTq5tF3n6sawMINZRZOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579125528569-eutadh3tereccch48an4nu4d9d4auupa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
