@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1037752884909",
+    "firebase_url": "https://loja-virtual-20673.firebaseio.com",
+    "project_id": "loja-virtual-20673",
+    "storage_bucket": "loja-virtual-20673.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037752884909:android:26b80d84520e5be7283024",
+        "android_client_info": {
+          "package_name": "pontini.systems.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037752884909-628o2v2029k6t24sfmrslbbicp6lqt2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp0mRyhNp0tCaUXeAvnkDaPbYC9ONpkJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037752884909-628o2v2029k6t24sfmrslbbicp6lqt2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
