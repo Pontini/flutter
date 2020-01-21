@@ -21,15 +21,14 @@ class HomeTab extends StatelessWidget {
       ),
     );
 
-//Quando vc quer colocar algo em cima da outra, vc usa stack. Nesse caso, tudo que está abaixo vai pra cima.
     return Stack(
       children: <Widget>[
         _buildBodyBack(),
         CustomScrollView(
           slivers: <Widget>[
-            SliverAppBar( 
+            SliverAppBar(
               floating: true,
-              snap: true, //Fazer efeito de subir e descer.
+              snap: true,
               backgroundColor: Colors.transparent,
               elevation: 0.0,
               flexibleSpace: FlexibleSpaceBar(
