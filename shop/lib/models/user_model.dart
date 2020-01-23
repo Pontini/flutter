@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,6 +11,10 @@ class UserModel extends Model {
   Map<String, dynamic> userData = Map();
 
   bool isLoading = false;
+
+  static UserModel of (BuildContext context)=>
+  ScopedModel.of<UserModel>(context);
+
   @override
   void addListener(VoidCallback listener) {
     super.addListener(listener);

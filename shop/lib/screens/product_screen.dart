@@ -1,10 +1,15 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:shop/datas/cart_product.dart';
 import 'package:shop/datas/product_data.dart';
+import 'package:shop/models/cart_model.dart';
+import 'package:shop/models/user_model.dart';
+import 'package:shop/screens/login_screen.dart';
+
+import 'cart_screen.dart';
 
 class ProductScreen extends StatefulWidget {
   final ProductData productData;
-
 
   ProductScreen(this.productData);
 
@@ -79,19 +84,20 @@ class _ProductScreenState extends State<ProductScreen> {
                     children: productData.sizes.map(
                       (s) {
                         return GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             setState(() {
-                            size=s;
-                              
+                              size = s;
                             });
                           },
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(4.0)),
-                                border: Border.all(color:s==size?primaryColor: Colors.grey[500],
-                                width: 3.0
-                                )),
+                                border: Border.all(
+                                    color: s == size
+                                        ? primaryColor
+                                        : Colors.grey[500],
+                                    width: 3.0)),
                             width: 50.0,
                             alignment: Alignment.center,
                             child: Text(s),
@@ -101,24 +107,54 @@ class _ProductScreenState extends State<ProductScreen> {
                     ).toList(),
                   ),
                 ),
-                SizedBox(height: 16.0,),
+                SizedBox(
+                  height: 16.0,
+                ),
                 SizedBox(
                   height: 44.0,
                   child: RaisedButton(
-                    onPressed:size!=null?(){}:null,
-                    child: Text("Adicionar ao Carrinho", style: TextStyle(
-                      fontSize: 18.0
-                    ),
+                    onPressed: size != null
+                        ? () {
+                            if (UserModel.of(context).isLoggedIn()) {
+                              CartProduct cartProduct = CartProduct();
+                              cartProduct.size = size;
+                              cartProduct.quantity = 1;
+                              cartProduct.pid = productData.id;
+                              cartProduct.category = productData.category;
+                              cartProduct.productData = productData;
+
+                              CartModel.of(context).addCartItem(cartProduct);
+
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CartScreen()));
+                            } else {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                            }
+                          }
+                        : null,
+                    child: Text(
+                      UserModel.of(context).isLoggedIn()
+                          ? "Adicionar ao Carrinho"
+                          : "Entre para Comprar",
+                      style: TextStyle(fontSize: 18.0),
                     ),
                     color: primaryColor,
                     textColor: Colors.white,
                   ),
                 ),
-                SizedBox(height: 16.0,),
-                Text("Descrição", style:TextStyle(
-                  fontSize: 16.0,
-                ) ,),
-                Text(productData.description, style: TextStyle(fontSize: 16.0),)
+                SizedBox(
+                  height: 16.0,
+                ),
+                Text(
+                  "Descrição",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
+                Text(
+                  productData.description,
+                  style: TextStyle(fontSize: 16.0),
+                )
               ],
             ),
           )
