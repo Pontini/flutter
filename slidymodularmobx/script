@@ -1,0 +1,11 @@
+pub global activate slidy
+
+slidy --version
+
+
+slidy start
+slidy install dio rxdart shared_preferences
+
+
+slidy generate page pages/splash
+slidy generate module modules/login -c
